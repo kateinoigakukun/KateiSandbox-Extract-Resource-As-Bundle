@@ -41,6 +41,13 @@
 			remoteGlobalIDString = C45FE41D230426AB00782546;
 			remoteInfo = DynamicLib;
 		};
+		C45FE43D23042FBA00782546 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C45FE3FA2304262F00782546 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C45FE42D2304272A00782546;
+			remoteInfo = StaticBundle;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,6 +167,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C45FE43E23042FBA00782546 /* PBXTargetDependency */,
 				C45FE424230426AB00782546 /* PBXTargetDependency */,
 			);
 			name = KateiSandbox;
@@ -310,6 +318,11 @@
 			isa = PBXTargetDependency;
 			target = C45FE41D230426AB00782546 /* DynamicLib */;
 			targetProxy = C45FE423230426AB00782546 /* PBXContainerItemProxy */;
+		};
+		C45FE43E23042FBA00782546 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C45FE42D2304272A00782546 /* StaticBundle */;
+			targetProxy = C45FE43D23042FBA00782546 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
