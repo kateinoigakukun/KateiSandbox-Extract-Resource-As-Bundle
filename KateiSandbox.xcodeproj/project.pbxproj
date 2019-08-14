@@ -154,6 +154,7 @@
 				C45FE3FE2304262F00782546 /* Sources */,
 				C45FE3FF2304262F00782546 /* Frameworks */,
 				C45FE4002304262F00782546 /* Resources */,
+				C45FE43A23042DBD00782546 /* Copy StaticBundle */,
 				C45FE427230426AB00782546 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -263,6 +264,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "TARGET=DynamicLib\nOVERRIDE_CONFIG=$PROJECT_DIR/BuildAsBundle.xcconfig\nxcodebuild \\\n    -project ${PROJECT_FILE_PATH} \\\n    -target ${TARGET} \\\n    -xcconfig ${OVERRIDE_CONFIG} \\\n    -configuration ${CONFIGURATION} \\\n    -sdk ${PLATFORM_NAME} \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    TARGET_BUILD_DIR=\"${TARGET_BUILD_DIR}\" \\\n    ARCHS=\"${ARCHS}\" \\\n    build\n\n";
+		};
+		C45FE43A23042DBD00782546 /* Copy StaticBundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy StaticBundle";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r $BUILT_PRODUCTS_DIR/StaticBundle.bundle $BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
