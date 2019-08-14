@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -283,17 +283,19 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/ResourceInput.xcfilelist",
 			);
 			inputPaths = (
 			);
 			name = "Copy StaticBundle";
 			outputFileListPaths = (
+				"$(SRCROOT)/ResourceOutput.xcfilelist",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -r $BUILT_PRODUCTS_DIR/StaticBundle.bundle $BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/\n";
+			shellScript = "$SRCROOT/scripts/copy-resource.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,0 +1,11 @@
+if [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then
+  exit 0
+fi
+for i in $(seq 1 $SCRIPT_INPUT_FILE_LIST_COUNT); do
+  local INPUT_FILE_LIST_VAR=INPUT_FILE_LIST_${i}
+  local INPUT_FILE_LIST=${!INPUT_FILE_LIST}
+  cat "${INPUT_FILE_LIST}" | while read INPUT_FILE; do
+    cp -r $INPUT_FILE $BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/
+  done
+done
+
