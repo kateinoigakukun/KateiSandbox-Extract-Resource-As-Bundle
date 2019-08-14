@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		C45FE42D2304272A00782546 /* StaticBundle */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C45FE42E2304272A00782546 /* Build configuration list for PBXAggregateTarget "StaticBundle" */;
+			buildPhases = (
+				C45FE4312304273300782546 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = StaticBundle;
+			productName = StaticBundle;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		C45FE4062304262F00782546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45FE4052304262F00782546 /* AppDelegate.swift */; };
 		C45FE4082304262F00782546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45FE4072304262F00782546 /* SceneDelegate.swift */; };
@@ -186,6 +200,9 @@
 					C45FE41D230426AB00782546 = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					C45FE42D2304272A00782546 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = C45FE3FD2304262F00782546 /* Build configuration list for PBXProject "KateiSandbox" */;
@@ -203,6 +220,7 @@
 			targets = (
 				C45FE4012304262F00782546 /* KateiSandbox */,
 				C45FE41D230426AB00782546 /* DynamicLib */,
+				C45FE42D2304272A00782546 /* StaticBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +245,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C45FE4312304273300782546 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TARGET=DynamicLib\nOVERRIDE_CONFIG=$PROJECT_DIR/BuildAsBundle.xcconfig\nxcodebuild \\\n    -project ${PROJECT_FILE_PATH} \\\n    -target ${TARGET} \\\n    -xcconfig ${OVERRIDE_CONFIG} \\\n    -configuration ${CONFIGURATION} \\\n    -sdk ${PLATFORM_NAME} \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    TARGET_BUILD_DIR=\"${TARGET_BUILD_DIR}\" \\\n    ARCHS=\"${ARCHS}\" \\\n    build\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C45FE3FE2304262F00782546 /* Sources */ = {
@@ -476,6 +514,22 @@
 			};
 			name = Release;
 		};
+		C45FE42F2304272A00782546 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C45FE4302304272A00782546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -502,6 +556,15 @@
 			buildConfigurations = (
 				C45FE428230426AB00782546 /* Debug */,
 				C45FE429230426AB00782546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C45FE42E2304272A00782546 /* Build configuration list for PBXAggregateTarget "StaticBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C45FE42F2304272A00782546 /* Debug */,
+				C45FE4302304272A00782546 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
